@@ -16,6 +16,7 @@
     "firebase": "^10.7.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.2",
@@ -23,7 +24,8 @@
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.16.0",
     "react-spinners": "^0.13.8",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "sweetalert2": "^11.10.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

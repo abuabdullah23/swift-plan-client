@@ -5,8 +5,8 @@ import useAuth from '../../hooks/useAuth';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import toast from 'react-hot-toast';
 
-const CreateTaskModal = ({ isOpen, closeModal }) => {
-    const { register, handleSubmit } = useForm();
+const CreateTaskModal = ({ isOpen, closeModal, refetch }) => {
+    const { register, handleSubmit, reset } = useForm();
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
 
@@ -16,8 +16,6 @@ const CreateTaskModal = ({ isOpen, closeModal }) => {
         const priority = data?.priority;
         const deadline = data?.deadline;
 
-        closeModal();
-
         const taskInfo = {
             userEmail: user?.email,
             name,
@@ -25,12 +23,14 @@ const CreateTaskModal = ({ isOpen, closeModal }) => {
             priority,
             deadline
         }
-        console.log(taskInfo);
 
         axiosSecure.post('/add-task', taskInfo)
             .then(res => {
                 if (res.status === 200) {
                     toast.success('Task added successful');
+                    refetch();
+                    closeModal();
+                    reset();
                 }
             })
             .catch(error => {
@@ -103,7 +103,7 @@ const CreateTaskModal = ({ isOpen, closeModal }) => {
                                                         required
                                                         name="priority"
                                                         {...register("priority")}
-                                                        className='w-full py-2 px-2 border border-[#203c79] focus:border-[#203c79] bg-transparent rounded outline-none'>
+                                                        className='w-full py-2 px-2 border border-[#203c79] focus:border-[#203c79] bg-[var(--body)] rounded outline-none'>
                                                         <option value="">--select--</option>
                                                         <option value="low">Low</option>
                                                         <option value="moderate">Moderate</option>
@@ -118,15 +118,15 @@ const CreateTaskModal = ({ isOpen, closeModal }) => {
                                                         type='date'
                                                         name="deadline"
                                                         {...register("deadline")}
-                                                        className='w-full py-2 px-2 border border-[#203c79] focus:border-[#203c79] bg-transparent rounded outline-none' />
+                                                        className='w-full py-2 px-2  bg-[var(--body)] text-[var(--primary-text)] border border-[#203c79] focus:border-[#203c79] rounded outline-none' />
                                                 </div>
                                                 <div className='flex items-center justify-between'>
-                                                    <button
+                                                    <p
                                                         onClick={closeModal}
-                                                        className="rounded-md border-2 border-[var(--border)] hover:border-[#203c79] py-2 px-3 font-semibold w-fit transition-all duration-300"
+                                                        className="cursor-pointer rounded-md border-2 border-[var(--border)] hover:border-[#203c79] py-2 px-3 font-semibold w-fit transition-all duration-300"
                                                     >
                                                         Close
-                                                    </button>
+                                                    </p>
                                                     <button
                                                         type='submit'
                                                         className="rounded-md bg-[var(--primary)] border-2 border-[var(--border)] text-white hover:border-[#203c79] py-2 px-3 font-semibold w-fit transition-all duration-300"
