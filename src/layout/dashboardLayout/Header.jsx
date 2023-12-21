@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FaList } from 'react-icons/fa';
 import DarkMode from '../../components/ThemeToggle/DarkMode';
 import useAuth from '../../hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 const Header = ({ showSidebar, setShowSidebar }) => {
     const { user } = useAuth();
@@ -30,7 +31,9 @@ const Header = ({ showSidebar, setShowSidebar }) => {
                                 <h2 className='text-sm font-bold'>{user?.displayName}</h2>
                                 <span className='text-sm w-full font-normal'>{'User'}</span>
                             </div>
-                            <img className='w-9 h-9 object-cover object-center rounded-full overflow-hidden' src={user?.photoURL} alt="user photo" />
+                            <Link to='/dashboard/profile'>
+                                <img className='w-9 h-9 object-cover object-center rounded-full overflow-hidden' src={user?.photoURL} alt="user photo" />
+                            </Link>
                         </div>
                     </div>
                 </div>

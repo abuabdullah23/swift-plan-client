@@ -81,7 +81,7 @@ const Profile = () => {
                     {/* Update profile */}
                     <div className='relative'>
                         <div className='flex items-center justify-end'>
-                            <button onClick={() => setShow(!show)} className='text-center w-fit py-[5px] px-[5px] rounded-sm bg-[var(--primary)] hover:bg[var(--primary)] hover:text-white flex items-center justify-start gap-2 z-10 transition-all duration-500'>
+                            <button onClick={() => setShow(!show)} className='text-center w-fit py-[5px] px-[5px] rounded-sm bg-[var(--primary)] hover:bg[var(--primary)] text-white hover:text-white flex items-center justify-start gap-2 z-10 transition-all duration-500'>
                                 {show
                                     ?
                                     <> <HiMiniXMark /> </>

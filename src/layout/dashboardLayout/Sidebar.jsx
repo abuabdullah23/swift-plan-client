@@ -38,7 +38,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                     </Link>
                 </div>
 
-                <hr className="border-b border-[#121c36] mb-3" />
+                <hr className="border-b border-[var(--border)] mb-3" />
 
                 <div className="px-4">
                     <ul>
@@ -57,7 +57,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                     </ul>
                 </div>
 
-                <hr className="border-b border-[#121c36] my-3" />
+                <hr className="border-b border-[var(--border)] my-3" />
                 <ul className="px-4">
                     <Link to='/'>
                         <button className="font-normal duration-200 px-3 py-2 rounded-sm flex justify-start items-center gap-3 hover:pl-4 hover:bg-[var(--primary)] hover:text-white transition-all w-full mb-1">

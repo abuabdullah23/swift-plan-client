@@ -8,6 +8,7 @@ import Register from "../pages/Login/Register";
 import PrivateRoute from "./PrivateRoute";
 import Profile from "../pages/Dashboard/Profile/Profile";
 import Error from "../Error";
+import AllTask from "../pages/Dashboard/AllTask/AllTask";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
                 path: '/dashboard',
                 element: <Dashboard />,
                 index: true
+            },
+            {
+                path: '/dashboard/all-task',
+                element: <AllTask />,
             },
             {
                 path: '/dashboard/profile',

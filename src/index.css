@@ -26,10 +26,10 @@ body {
   --secondary: #f8f8f8;
   --card-bg: #dbdbdb;
   --primary: #006494;
-  --border: #b6b6b6;
+  --border: #e0e0e0;
   --black: #000000;
   --button: #006494;
-  --titleBg: #006494;
+  --titleBg: #f8f8f8;
   --primary-text: #363636;
 }
 
@@ -38,7 +38,7 @@ body {
   --secondary: #003554;
   --card-bg: #131b42;
   --primary: #006ea1;
-  --border: #3748a0;
+  --border: #144f6b;
   --black: #000000;
   --button: #006494;
   --titleBg: #006494;
