@@ -1,0 +1,10 @@
+.active {
+    font-weight: 400;
+    color: #29ABE2;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.deActive:hover {
+    color: #29ABE2;
+}
