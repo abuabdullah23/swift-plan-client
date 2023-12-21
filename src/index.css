@@ -25,11 +25,11 @@ body {
   --body: #e7e7e7;
   --secondary: #f8f8f8;
   --card-bg: #dbdbdb;
-  --primary: #00a74b;
+  --primary: #006494;
   --border: #b6b6b6;
   --black: #000000;
-  --button: #00a74b;
-  --titleBg: #00a74b;
+  --button: #006494;
+  --titleBg: #006494;
   --primary-text: #363636;
 }
 
@@ -37,10 +37,10 @@ body {
   --body: #051923;
   --secondary: #003554;
   --card-bg: #131b42;
-  --primary: #00c458;
+  --primary: #006ea1;
   --border: #3748a0;
   --black: #000000;
-  --button: #00c458;
-  --titleBg: #00c458;
+  --button: #006494;
+  --titleBg: #006494;
   --primary-text: #d6d6d6;
 }

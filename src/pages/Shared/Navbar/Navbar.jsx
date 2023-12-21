@@ -40,6 +40,9 @@ const Navbar = () => {
                                     </ActiveLink>
                                 </li>)
                             }
+                            {
+                                user && <ActiveLink to='/dashboard'>Dashboard</ActiveLink>
+                            }
                         </ul>
                     </div>
 
@@ -52,6 +55,9 @@ const Navbar = () => {
                                         {nav.title}
                                     </ActiveLink>
                                 </li>)
+                            }
+                            {
+                                user && <ActiveLink to='/dashboard'>Dashboard</ActiveLink>
                             }
                         </ul>
                     </div>
