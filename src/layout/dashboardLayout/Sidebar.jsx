@@ -47,7 +47,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                                 <Link
                                     onClick={() => setShowSidebar(false)}
                                     to={n.path}
-                                    className={`${pathname === n.path ? 'bg-[var(--primary)] shadow-indigo-500/30 text-white duration-500' : 'font-normal duration-200'} px-3 py-2 rounded-sm flex justify-start items-center gap-3 hover:pl-4 hover:bg-[var(--primary)] transition-all w-full mb-1`}>
+                                    className={`${pathname === n.path ? 'bg-[var(--primary)] shadow-indigo-500/30 text-white duration-500' : 'font-normal duration-200'} px-3 py-2 rounded-sm flex justify-start items-center gap-3 hover:pl-4 hover:bg-[var(--primary)] hover:text-white transition-all w-full mb-1`}>
                                     <span>{n.icon}</span>
                                     <span>{n.title}</span>
                                 </Link>
@@ -60,13 +60,13 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 <hr className="border-b border-[#121c36] my-3" />
                 <ul className="px-4">
                     <Link to='/'>
-                        <button className="font-normal duration-200 px-3 py-2 rounded-sm flex justify-start items-center gap-3 hover:pl-4 hover:bg-[var(--primary)] transition-all w-full mb-1">
+                        <button className="font-normal duration-200 px-3 py-2 rounded-sm flex justify-start items-center gap-3 hover:pl-4 hover:bg-[var(--primary)] hover:text-white transition-all w-full mb-1">
                             <span><FaHome /></span>
                             <span>Home</span>
                         </button>
                     </Link>
                     <li onClick={handleLogOut}>
-                        <button className="font-normal duration-200 px-3 py-2 rounded-sm flex justify-start items-center gap-3 hover:pl-4 hover:bg-[var(--primary)] transition-all w-full mb-1">
+                        <button className="font-normal duration-200 px-3 py-2 rounded-sm flex justify-start items-center gap-3 hover:pl-4 hover:bg-[var(--primary)] hover:text-white transition-all w-full mb-1">
                             <span><BiLogOutCircle /></span>
                             <span>Logout</span>
                         </button>

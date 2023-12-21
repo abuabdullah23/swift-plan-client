@@ -1,4 +1,5 @@
 import { AiFillDashboard, AiOutlinePlus } from "react-icons/ai";
+import { ImProfile  } from "react-icons/im";
 import { RiArticleLine } from "react-icons/ri";
 
 export const dashboardNav = [
@@ -13,8 +14,8 @@ export const dashboardNav = [
         path: '/dashboard/all-task'
     },
     {
-        title: 'Add Task',
-        icon: <AiOutlinePlus />,
-        path: '/dashboard/add-task'
+        title: 'Profile',
+        icon: <ImProfile />,
+        path: '/dashboard/profile'
     }
 ]
