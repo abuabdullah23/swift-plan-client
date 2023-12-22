@@ -6,6 +6,11 @@ export const allNav = [
     },
     {
         id: 2,
+        path: '/faq',
+        title: 'FAQ'
+    },
+    {
+        id: 3,
         path: '/about',
         title: 'About'
     },

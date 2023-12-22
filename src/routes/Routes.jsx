@@ -11,6 +11,7 @@ import Error from "../Error";
 import AllTask from "../pages/Dashboard/AllTask/AllTask";
 import PreviousTask from "../pages/Dashboard/PreviousTask/PreviousTask";
 import About from "../pages/About/About";
+import FAQ from "../pages/FAQ/FAQ";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />
+            },
+            {
+                path: '/faq',
+                element: <FAQ />
             },
             {
                 path: '/about',
