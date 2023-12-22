@@ -9,7 +9,9 @@ const Footer = () => {
         <div>
             <footer className="divide-y bg-[var(--secondary)] dark:text-gray-100 mt-16">
                 <Container>
-                    <div className="flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+                    <div className="flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0" data-aos="fade-down"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000">
                         <div className="lg:w-1/3">
                             <a rel="noopener noreferrer" href="#" className="flex justify-center items-center space-x-3 lg:justify-start">
                                 <div className="flex p-2.5 items-center justify-center w-12 h-12 rounded-full bg-[#14213d] dark:bg-transparent">
@@ -65,7 +67,7 @@ const Footer = () => {
                                         <FaLinkedin className='w-5 h-5' />
                                     </a>
                                     <a rel="noopener noreferrer" href="https://github.com/abuabdullah23" target='_blank' title="GitHub" className="flex items-center p-1">
-                                    <FaGithub className='w-5 h-5' />
+                                        <FaGithub className='w-5 h-5' />
                                     </a>
                                 </div>
                             </div>

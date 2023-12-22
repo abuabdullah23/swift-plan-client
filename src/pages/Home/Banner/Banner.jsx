@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
-        <div className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white py-12 md:py-24 px-8 text-center mt-7">
-            <h1 className="text-4xl font-bold mb-4">Welcome to Our Task Management Website</h1>
+        <div className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white py-12 md:py-24 px-8 text-center mt-7" data-aos="fade-up-left" data-aos-duration="1300">
+            <h1 className="text-4xl font-bold mb-4" >Welcome to Our Task Management Website</h1>
             <p className="text-lg mb-8">
                 Organize your tasks efficiently and boost your productivity with our user-friendly task management application.
             </p>

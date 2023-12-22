@@ -17,14 +17,14 @@ const DarkMode = ({ theme, setTheme }) => {
     }, [theme]);
 
     return (
-        <label className="">
+        <label>
             <input
                 onChange={handleToggle}
                 checked={theme === "dark"}
                 type="checkbox"
                 className="hidden"
             />
-            <div className="">
+            <div>
                 {theme === "dark" ? (
                     <BsMoon className="cursor-pointer text-[17px] text-white hover:text-green-500" />
                 ) : (
