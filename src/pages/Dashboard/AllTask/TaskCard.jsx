@@ -6,8 +6,9 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import UpdateTaskModal from "../../../components/Modal/UpdateTaskModal";
+import { useDrag } from "react-dnd";
 
-const TaskCard = ({ task, index, refetch }) => {
+const TaskCard = ({ task, index, refetch, sectionIdentifier }) => {
     const { _id, name, userEmail, priority, deadline, createdAt, description } = task;
     const axiosSecure = useAxiosSecure();
 
@@ -16,6 +17,16 @@ const TaskCard = ({ task, index, refetch }) => {
     const closeModal = () => {
         setIsOpen(false)
     }
+
+    const [{ isDragging }, drag] = useDrag(() => ({
+        type: 'task',
+        item: { id: task?._id, sectionIdentifier },
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging()
+        })
+    }))
+
+    console.log(isDragging);
 
 
     // handle delete my task
@@ -57,13 +68,15 @@ const TaskCard = ({ task, index, refetch }) => {
     }
 
     return (
-        <div className='border border-[var(--border)] rounded relative p-3 flex flex-col gap-2 hover:shadow-lg hover:scale-[103%] duration-200'>
-            <h2 className='text-lg font-semibold'>{name}</h2>
-            <p>{description}</p>
+        <div
+            ref={drag}
+            className={`border border-[var(--border)] rounded relative py-1.5 px-3 flex flex-col gap-2 hover:shadow-lg hover:scale-[103%] duration-200 cursor-pointer ${isDragging ? 'opacity-20' : 'opacity-100'}`}>
+            <h2 className='text-2xl font-semibold'>{name}</h2>
+            <p className="mt-3 mb-6">{description}</p>
 
             <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-3">
-                    <p title={moment(createdAt).format("D MMMM YYYY, dddd, h:mm:ss A")} className="flex gap-2 items-center"><span><MdDateRange /></span> {moment(createdAt).format("D MMM, YYYY")}</p>
+                    <p title={moment(createdAt).format("D MMMM YYYY, dddd, h:mm:ss A")} className="flex gap-2 items-center"><span><MdDateRange /></span> {moment(createdAt).format("D MMM, YYYY")} </p>
                     <button
                         title="Edit"
                         onClick={() => setIsOpen(true)}
@@ -79,7 +92,9 @@ const TaskCard = ({ task, index, refetch }) => {
                 <div className="flex items-center gap-3">
                     <p className="flex gap-2 items-center"><span className="bg-[#ff2929] text-white text-sm py-[1px] px-[6px] rounded-sm">Deadline</span> {moment(deadline).format("D MMM, YYYY")}</p>
                 </div>
-                <div className="flex items-center justify-end">
+                <div className="flex items-center justify-between">
+                    <p className="border border-[var(--border)] rounded py-1 px-2">Priority: {priority}</p>
+
                     <select defaultValue={task?.status} onChange={handleChangeStatus} className={`text-base font-semibold bg-[var(--body)] outline-none border border-[var(--border)] rounded py-1 px-2`}>
                         <option value="to-do">to do</option>
                         <option value="on-going">on going</option>

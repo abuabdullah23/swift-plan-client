@@ -9,6 +9,8 @@ import PrivateRoute from "./PrivateRoute";
 import Profile from "../pages/Dashboard/Profile/Profile";
 import Error from "../Error";
 import AllTask from "../pages/Dashboard/AllTask/AllTask";
+import PreviousTask from "../pages/Dashboard/PreviousTask/PreviousTask";
+import About from "../pages/About/About";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +20,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />
+            },
+            {
+                path: '/about',
+                element: <About />
             }
         ]
     },
@@ -50,6 +56,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/all-task',
                 element: <AllTask />,
+            },
+            {
+                path: '/dashboard/previous-task',
+                element: <PreviousTask />,
             },
             {
                 path: '/dashboard/profile',

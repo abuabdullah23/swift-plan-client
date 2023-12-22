@@ -27,7 +27,7 @@ const CreateTaskModal = ({ isOpen, closeModal, refetch }) => {
         axiosSecure.post('/add-task', taskInfo)
             .then(res => {
                 if (res.status === 200) {
-                    toast.success('Task added successful');
+                    toast.success(`Task added successful, Deadline: ${deadline}`);
                     refetch();
                     closeModal();
                     reset();
