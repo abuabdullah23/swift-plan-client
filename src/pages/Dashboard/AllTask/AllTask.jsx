@@ -20,19 +20,21 @@ const AllTask = () => {
 
     return (
         <div className='px-2 lg:px-4 pb-5'>
-            <div className='w-full text-center font-semibold mb-3 flex items-center justify-start'>
-                <button onClick={() => setIsOpen(true)} className=' py-1 px-2 flex items-center gap-3 bg-[var(--titleBg)]'>
+            <div className='w-full text-center font-semibold mb-3 flex items-center justify-between gap-6'>
+                <h3>Total: {myAllTask?.length}</h3>
+
+                <button onClick={() => setIsOpen(true)} className=' py-1 px-2 flex items-center gap-3 bg-[var(--titleBg)] hover:scale-[102%] duration-200'>
                     <p>New Task</p>
                     <FaEdit />
                 </button>
 
-                <CreateTaskModal
-                    isOpen={isOpen}
-                    setIsOpen={setIsOpen}
-                    closeModal={closeModal}
-                    refetch={refetch}
-                />
             </div>
+            <CreateTaskModal
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+                closeModal={closeModal}
+                refetch={refetch}
+            />
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {/* TO Do */}
