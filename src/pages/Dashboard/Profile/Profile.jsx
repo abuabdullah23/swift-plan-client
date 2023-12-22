@@ -62,7 +62,7 @@ const Profile = () => {
             }
 
             <h2 className='text-2xl font-semibold text-center'>{`${user?.displayName}'s Profile`}</h2>
-            <div className='w-full flex flex-col md:flex-row items-center justify-start gap-8 my-16'>
+            <div className='w-full flex flex-col items-center justify-start gap-8 my-16'>
                 <div className='w-full md:w-1/2 flex items-center justify-center'>
                     {
                         loader && <div className='w-screen h-screen flex justify-center items-center fixed left-0 top-0 bg-[#38303033] z-[999]'>
@@ -93,7 +93,7 @@ const Profile = () => {
                             </button>
                         </div>
 
-                        <div className={`transition-all duration-300 ease-in-out absolute right-1 top-4 bg-[var(--body)] rounded-md border border-slate-500 overflow-y-auto w-full ${!show ? 'w-[0px] h-[0px]' : 'h-[220px]'}`}>
+                        <div className={`transition-all duration-300 ease-in-out absolute right-1 top-4 bg-[var(--body)] rounded-md border border-slate-500 overflow-y-auto w-full mb-7 ${!show ? 'w-[0px] h-[0px]' : 'h-[220px]'}`}>
                             <form
                                 onSubmit={updateProfileInfo}
                                 className='flex flex-col gap-3 p-4 text-base font-normal'>

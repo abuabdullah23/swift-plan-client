@@ -27,7 +27,7 @@ const UpdateTaskModal = ({ isOpen, closeModal, refetch, task }) => {
         axiosSecure.put(`/update-my-task/${task?._id}`, updateTaskInfo)
             .then(res => {
                 if (res.status === 200) {
-                    toast.success('Task added successful');
+                    toast.success(res?.data?.message);
                     refetch();
                     closeModal();
                     reset();
