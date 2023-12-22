@@ -70,39 +70,47 @@ const TaskCard = ({ task, index, refetch, sectionIdentifier }) => {
     return (
         <div
             ref={drag}
-            className={`border border-[var(--border)] rounded relative py-1.5 px-3 flex flex-col gap-2 hover:shadow-lg hover:scale-[103%] duration-200 cursor-pointer ${isDragging ? 'opacity-20' : 'opacity-100'}`}>
-            <h2 className='text-2xl font-semibold'>{name}</h2>
-            <p className="mt-3 mb-6">{description}</p>
+            className={`border border-[var(--border)] rounded relative py-1.5 px-3 hover:shadow-lg hover:scale-[103%] duration-200 cursor-pointer ${isDragging ? 'opacity-20' : 'opacity-100'}`}>
 
-            <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-3">
-                    <p title={moment(createdAt).format("D MMMM YYYY, dddd, h:mm:ss A")} className="flex gap-2 items-center"><span><MdDateRange /></span> {moment(createdAt).format("D MMM, YYYY")} </p>
-                    <button
-                        title="Edit"
-                        onClick={() => setIsOpen(true)}
-                        className='py-[6px] px-1 text-base text-[var(--primary-text)] rounded-sm hover:shadow-lg flex flex-row items-center gap-1'><FaEdit /> <span></span>
-                    </button>
-                    <button
-                        title="Delete"
-                        onClick={() => handleDeleteMyTask(_id)}
-                        className='py-[6px] px-1 text-sm text-[var(--primary-text)] rounded-sm hover:shadow-lg flex flex-row items-center gap-1'><FaTrashAlt /> <span></span>
-                    </button>
+            <div className="flex flex-col gap-2"
+                data-aos="flip-right"
+                data-aos-easing="linear"
+                data-aos-duration="500"
+            >
+                <h2 className='text-2xl font-semibold'>{name}</h2>
+                <p className="mt-3 mb-6">{description}</p>
+
+                <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-3">
+                        <p title={moment(createdAt).format("D MMMM YYYY, dddd, h:mm:ss A")} className="flex gap-2 items-center"><span><MdDateRange /></span> {moment(createdAt).format("D MMM, YYYY")} </p>
+                        <button
+                            title="Edit"
+                            onClick={() => setIsOpen(true)}
+                            className='py-[6px] px-1 text-base text-[var(--primary-text)] rounded-sm hover:shadow-lg flex flex-row items-center gap-1'><FaEdit /> <span></span>
+                        </button>
+                        <button
+                            title="Delete"
+                            onClick={() => handleDeleteMyTask(_id)}
+                            className='py-[6px] px-1 text-sm text-[var(--primary-text)] rounded-sm hover:shadow-lg flex flex-row items-center gap-1'><FaTrashAlt /> <span></span>
+                        </button>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                        <p className="flex gap-2 items-center"><span className="bg-[#ff2929] text-white text-sm py-[1px] px-[6px] rounded-sm">Deadline</span> {moment(deadline).format("D MMM, YYYY")}</p>
+                    </div>
+                    <div className="flex items-center justify-between">
+                        <p className="border border-[var(--border)] rounded py-1 px-2">Priority: {priority}</p>
+
+                        <select defaultValue={task?.status} onChange={handleChangeStatus} className={`text-base font-semibold bg-[var(--body)] outline-none border border-[var(--border)] rounded py-1 px-2`}>
+                            <option value="to-do">to do</option>
+                            <option value="on-going">on going</option>
+                            <option value="completed">completed</option>
+                        </select>
+                    </div>
+
                 </div>
-
-                <div className="flex items-center gap-3">
-                    <p className="flex gap-2 items-center"><span className="bg-[#ff2929] text-white text-sm py-[1px] px-[6px] rounded-sm">Deadline</span> {moment(deadline).format("D MMM, YYYY")}</p>
-                </div>
-                <div className="flex items-center justify-between">
-                    <p className="border border-[var(--border)] rounded py-1 px-2">Priority: {priority}</p>
-
-                    <select defaultValue={task?.status} onChange={handleChangeStatus} className={`text-base font-semibold bg-[var(--body)] outline-none border border-[var(--border)] rounded py-1 px-2`}>
-                        <option value="to-do">to do</option>
-                        <option value="on-going">on going</option>
-                        <option value="completed">completed</option>
-                    </select>
-                </div>
-
             </div>
+
 
             <UpdateTaskModal
                 isOpen={isOpen}
