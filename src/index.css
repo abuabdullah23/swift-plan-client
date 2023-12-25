@@ -31,6 +31,7 @@ body {
   --button: #006494;
   --titleBg: #f8f8f8;
   --primary-text: #363636;
+  --drop-bg: #36363617;
 }
 
 .dark {
@@ -43,4 +44,5 @@ body {
   --button: #006494;
   --titleBg: #006494;
   --primary-text: #e7e7e7;
+  --drop-bg: #e7e7e713;
 }
